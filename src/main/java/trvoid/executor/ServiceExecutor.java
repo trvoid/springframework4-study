@@ -2,11 +2,18 @@ package trvoid.executor;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import trvoid.handler.MessageHandler;
 
 public class ServiceExecutor {
     private static Logger LOGGER = LoggerFactory.getLogger(ServiceExecutor.class);
 
+    private MessageHandler messageHandler;
+
     private boolean keepRunning = true;
+
+    public void setMessageHandler(MessageHandler messageHandler) {
+        this.messageHandler = messageHandler;
+    }
 
     public void start() throws Exception {
         LOGGER.info("Service is starting...");
@@ -15,7 +22,7 @@ public class ServiceExecutor {
         int count = 0;
         while (keepRunning) {
             Thread.sleep(1000);
-            LOGGER.info("count " + ++count);
+            messageHandler.handle("count " + ++count);
         }
     }
 

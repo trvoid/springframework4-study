@@ -16,7 +16,8 @@ public class ConsoleExecutor {
 
     protected void initBeanFactory() {
         beanFactory = new ClassPathXmlApplicationContext(
-                "classpath:applicationContext.xml"
+                "classpath:applicationContext.xml",
+                "classpath:applicationContext-default.xml"
         );
     }
 

@@ -5,7 +5,6 @@
     http://www.springframework.org/schema/beans
     http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="serviceExecutor" class="trvoid.executor.ServiceExecutor">
-        <property name="messageHandler" ref="messageHandler"></property>
+    <bean id="messageHandler" class="trvoid.handler.DefaultMessageHandler">
     </bean>
 </beans>
