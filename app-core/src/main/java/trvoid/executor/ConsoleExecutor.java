@@ -21,6 +21,10 @@ public class ConsoleExecutor {
         );
     }
 
+    protected void setBeanFactory(BeanFactory beanFactory) {
+        this.beanFactory = beanFactory;
+    }
+
     protected void start() {
         final ServiceExecutor serviceExecutor = beanFactory.getBean("serviceExecutor", ServiceExecutor.class);
 
@@ -48,7 +52,7 @@ public class ConsoleExecutor {
     }
 
     public static void main(String[] args) {
-        LOGGER.info("Hello World!!!");
+        LOGGER.info("App 1.0");
 
         ConsoleExecutor executor = new ConsoleExecutor();
         executor.start();
